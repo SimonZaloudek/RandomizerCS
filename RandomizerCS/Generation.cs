@@ -20,9 +20,9 @@ namespace RandomizerCS
             while (true) {
                 Console.WriteLine("|String| randomizer, |Int| randomizer, |Char| randomizer or |Test| randomizer? ..|end| to stop the program");
                 String input = Console.ReadLine();
-                while (!input.Equals("string") && !input.Equals("String") && !input.Equals("int") && !input.Equals("Int") && !input.Equals("end"))
+                while (!input.Equals("string") && !input.Equals("String") && !input.Equals("int") && !input.Equals("Int") && !input.Equals("char") && !input.Equals("Char") && !input.Equals("end"))
                 {
-                    Console.WriteLine("Wrong input.. |String| ..|end| to stop the program");
+                    Console.WriteLine("Wrong input.. |String|Int|Char|Test| ..|end| to stop the program");
                     input = Console.ReadLine();
                 }
                 switch (input)
@@ -34,6 +34,10 @@ namespace RandomizerCS
                     case "Int":
                     case "int":
                         this.IntGeneration();
+                        break;
+                    case "Char":
+                    case "char":
+                        this.CharGeneration();
                         break;
                     default:
                         goto end;
@@ -74,6 +78,26 @@ namespace RandomizerCS
             do {
                 int vysledok = rndm.Next(topN - bottomN + 1) + bottomN;
                 Console.WriteLine("Random number is " + vysledok);
+                this.rollDetection();
+            } while (!input.Equals("n"));
+        }
+
+        public void CharGeneration()
+        {
+            String alphabet = "ABCDEFGH1IJKLMNOPQRSTUVWXYZ";
+            Console.WriteLine("Printing random letter between |A| - |Z|");
+            Console.WriteLine("________________________________________\n");
+            do
+            {
+                char pismeno = (alphabet[rndm.Next(26)]);
+                if (pismeno == '1')
+                {
+                    Console.WriteLine("CH\n");
+                }
+                else
+                {
+                    Console.WriteLine("\n" + pismeno + "\n");
+                }
                 this.rollDetection();
             } while (!input.Equals("n"));
         }
