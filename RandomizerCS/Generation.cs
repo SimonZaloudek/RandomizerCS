@@ -7,6 +7,7 @@ namespace RandomizerCS
     {
         ArrayList list;
         Random rndm;
+        String input;
         public void inic()
         {
             list = new ArrayList();
@@ -17,9 +18,9 @@ namespace RandomizerCS
         {
             this.inic();
             while (true) {
-                Console.WriteLine("|String| randomizer ..|end| to stop the program");
+                Console.WriteLine("|String| randomizer, |Int| randomizer, |Char| randomizer or |Test| randomizer? ..|end| to stop the program");
                 String input = Console.ReadLine();
-                while (!input.Equals("string") && !input.Equals("String") && !input.Equals("end"))
+                while (!input.Equals("string") && !input.Equals("String") && !input.Equals("int") && !input.Equals("Int") && !input.Equals("end"))
                 {
                     Console.WriteLine("Wrong input.. |String| ..|end| to stop the program");
                     input = Console.ReadLine();
@@ -29,6 +30,10 @@ namespace RandomizerCS
                     case "String":
                     case "string":
                         this.StringGeneration();
+                        break;
+                    case "Int":
+                    case "int":
+                        this.IntGeneration();
                         break;
                     default:
                         goto end;
@@ -40,7 +45,6 @@ namespace RandomizerCS
 
         private void StringGeneration()
         {
-            String input = "";
             do
             {
                 Console.WriteLine("\nEnter what u cant decide about.. then type |decide|");
@@ -53,15 +57,41 @@ namespace RandomizerCS
                 int cislo = rndm.Next(list.Count);
                 Console.WriteLine("\nGo on:");
                 Console.WriteLine(list[cislo] + "\n");
-                Console.WriteLine("Do you want to repeat the generation? |y|n|");
-                input = Console.ReadLine();
-                while(!input.Equals("y") && !input.Equals("n"))
-                {
-                    Console.WriteLine("Wrong input.. |y|n|");
-                    input = Console.ReadLine();
-                }
-
+                this.rollDetection();
             } while (!input.Equals("n"));
+        }
+
+        private void IntGeneration() 
+        {
+            int bottomN;
+            int topN;
+            Console.WriteLine("Enter the smallest number..");
+            bottomN = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the biggest number..");
+            topN = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("____________________\n");
+
+            do {
+                int vysledok = rndm.Next(topN - bottomN + 1) + bottomN;
+                Console.WriteLine("Random number is " + vysledok);
+                this.rollDetection();
+            } while (!input.Equals("n"));
+        }
+
+        private void rollDetection()
+        {
+            Console.WriteLine("Do you want to repeat the generation? |y|n|");
+            input = Console.ReadLine();
+            while (!input.Equals("y") && !input.Equals("n"))
+            {
+                Console.WriteLine("Wrong input.. |y|n|");
+                input = Console.ReadLine();
+            }
+            if (input.Equals("n"))
+            {
+                Console.WriteLine("\nEnjoy");
+                Console.WriteLine("____________________\n");
+            }
         }
     }
 }

@@ -6,3 +6,11 @@ C:\Users\simon\Desktop\Programy\RandomizerCS\RandomizerCS\RandomizerCS\obj\Debug
 C:\Users\simon\Desktop\Programy\RandomizerCS\RandomizerCS\RandomizerCS\obj\Debug\RandomizerCS.csproj.CoreCompileInputs.cache
 C:\Users\simon\Desktop\Programy\RandomizerCS\RandomizerCS\RandomizerCS\obj\Debug\RandomizerCS.exe
 C:\Users\simon\Desktop\Programy\RandomizerCS\RandomizerCS\RandomizerCS\obj\Debug\RandomizerCS.pdb
+C:\Users\simon\Desktop\Programy\RandomizerCS\RandomizerCS\bin\Debug\RandomizerCS.exe.config
+C:\Users\simon\Desktop\Programy\RandomizerCS\RandomizerCS\bin\Debug\RandomizerCS.exe
+C:\Users\simon\Desktop\Programy\RandomizerCS\RandomizerCS\bin\Debug\RandomizerCS.pdb
+C:\Users\simon\Desktop\Programy\RandomizerCS\RandomizerCS\obj\Debug\RandomizerCS.csproj.AssemblyReference.cache
+C:\Users\simon\Desktop\Programy\RandomizerCS\RandomizerCS\obj\Debug\RandomizerCS.csproj.SuggestedBindingRedirects.cache
+C:\Users\simon\Desktop\Programy\RandomizerCS\RandomizerCS\obj\Debug\RandomizerCS.csproj.CoreCompileInputs.cache
+C:\Users\simon\Desktop\Programy\RandomizerCS\RandomizerCS\obj\Debug\RandomizerCS.exe
+C:\Users\simon\Desktop\Programy\RandomizerCS\RandomizerCS\obj\Debug\RandomizerCS.pdb
