@@ -20,7 +20,7 @@ namespace RandomizerCS
             while (true) {
                 Console.WriteLine("|String| randomizer, |Int| randomizer, |Char| randomizer or |Test| randomizer? ..|end| to stop the program");
                 String input = Console.ReadLine();
-                while (!input.Equals("string") && !input.Equals("String") && !input.Equals("int") && !input.Equals("Int") && !input.Equals("char") && !input.Equals("Char") && !input.Equals("end"))
+                while (!input.Equals("string") && !input.Equals("String") && !input.Equals("int") && !input.Equals("Int") && !input.Equals("char") && !input.Equals("Char") && !input.Equals("test") && !input.Equals("Test") && !input.Equals("end"))
                 {
                     Console.WriteLine("Wrong input.. |String|Int|Char|Test| ..|end| to stop the program");
                     input = Console.ReadLine();
@@ -38,6 +38,10 @@ namespace RandomizerCS
                     case "Char":
                     case "char":
                         this.CharGeneration();
+                        break;
+                    case "Test":
+                    case "test":
+                        this.TestGeneration();
                         break;
                     default:
                         goto end;
@@ -69,7 +73,7 @@ namespace RandomizerCS
         {
             int bottomN;
             int topN;
-            Console.WriteLine("Enter the smallest number..");
+            Console.WriteLine("\nEnter the smallest number..");
             bottomN = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter the biggest number..");
             topN = Convert.ToInt32(Console.ReadLine());
@@ -86,7 +90,7 @@ namespace RandomizerCS
         {
             String alphabet = "ABCDEFGH1IJKLMNOPQRSTUVWXYZ";
             Console.WriteLine("Printing random letter between |A| - |Z|");
-            Console.WriteLine("________________________________________\n");
+            Console.WriteLine("________________________________________");
             do
             {
                 char pismeno = (alphabet[rndm.Next(26)]);
@@ -98,6 +102,23 @@ namespace RandomizerCS
                 {
                     Console.WriteLine("\n" + pismeno + "\n");
                 }
+                this.rollDetection();
+            } while (!input.Equals("n"));
+        }
+
+        private void TestGeneration()
+        {
+            String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            Console.WriteLine("\nEnter the number of test options |2|-|99|");
+            int number = Convert.ToInt32(Console.ReadLine());
+            while (number < 2 && number > 99)
+            {
+                Console.WriteLine("Wrong input |2|-|99|");
+                number = Convert.ToInt32(Console.ReadLine());
+            }
+            do
+            {
+                Console.WriteLine("\n" + alphabet[rndm.Next(number)] + "\n");
                 this.rollDetection();
             } while (!input.Equals("n"));
         }
