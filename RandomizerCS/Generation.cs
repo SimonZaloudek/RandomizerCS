@@ -3,55 +3,19 @@ using System.Collections;
 
 namespace RandomizerCS
 {
-    internal class Generation
+    class Generation
     {
         ArrayList list;
         Random rndm;
         String input;
-        public void inic()
+       
+        public Generation()
         {
             list = new ArrayList();
             rndm = new Random();
         }
-        
-        public Generation()
-        {
-            this.inic();
-            while (true) {
-                Console.WriteLine("|String| randomizer, |Int| randomizer, |Char| randomizer or |Test| randomizer? ..|end| to stop the program");
-                String input = Console.ReadLine();
-                while (!input.Equals("string") && !input.Equals("String") && !input.Equals("int") && !input.Equals("Int") && !input.Equals("char") && !input.Equals("Char") && !input.Equals("test") && !input.Equals("Test") && !input.Equals("end"))
-                {
-                    Console.WriteLine("Wrong input.. |String|Int|Char|Test| ..|end| to stop the program");
-                    input = Console.ReadLine();
-                }
-                switch (input)
-                {
-                    case "String":
-                    case "string":
-                        this.StringGeneration();
-                        break;
-                    case "Int":
-                    case "int":
-                        this.IntGeneration();
-                        break;
-                    case "Char":
-                    case "char":
-                        this.CharGeneration();
-                        break;
-                    case "Test":
-                    case "test":
-                        this.TestGeneration();
-                        break;
-                    default:
-                        goto end;
-                        break;
-                }
-            }
-            end:;
-        }
 
-        private void StringGeneration()
+        public void StringGeneration()
         {
             do
             {
@@ -69,7 +33,7 @@ namespace RandomizerCS
             } while (!input.Equals("n"));
         }
 
-        private void IntGeneration() 
+        public void IntGeneration() 
         {
             int bottomN;
             int topN;
@@ -106,7 +70,7 @@ namespace RandomizerCS
             } while (!input.Equals("n"));
         }
 
-        private void TestGeneration()
+        public void TestGeneration()
         {
             String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             Console.WriteLine("\nEnter the number of test options |2|-|99|");
@@ -123,7 +87,7 @@ namespace RandomizerCS
             } while (!input.Equals("n"));
         }
 
-        private void rollDetection()
+        public void rollDetection()
         {
             Console.WriteLine("Do you want to repeat the generation? |y|n|");
             input = Console.ReadLine();

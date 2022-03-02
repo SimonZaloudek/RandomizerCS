@@ -13,7 +13,7 @@ namespace RandomizerCS
         {
             new Login();
 
-            new Generation();
+            new Menu();
         }
     }
 }
