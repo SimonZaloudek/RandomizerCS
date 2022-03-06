@@ -29,6 +29,7 @@ namespace RandomizerCS
                 int cislo = rndm.Next(list.Count);
                 Console.WriteLine("\nGo on:");
                 Console.WriteLine(list[cislo] + "\n");
+                list.Clear();
                 this.rollDetection();
             } while (!input.Equals("n"));
         }
@@ -70,10 +71,25 @@ namespace RandomizerCS
             } while (!input.Equals("n"));
         }
 
+        public void BoolGeneration()
+        {
+            do
+            {
+                Console.WriteLine("Enter your question..");
+                Console.ReadLine();
+                list.Add("Yes");
+                list.Add("No");
+                Console.WriteLine("\n" + list[rndm.Next(list.Count)]);
+                list.Clear();
+                this.rollDetection();
+            } while (!input.Equals("n"));
+        }
+
         public void TestGeneration()
         {
             String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             Console.WriteLine("\nEnter the number of test options |2|-|99|");
+            //Bugfix needed
             int number = Convert.ToInt32(Console.ReadLine());
             while (number < 2 && number > 99)
             {
